@@ -29,8 +29,8 @@ pipeline {
             }
             post {
                 success {
-                mail to: "s223716089@deakin.edu.au"
-                subject: "Unit and Integration Test Status"
+                mail to: "s223716089@deakin.edu.au",
+                subject: "Unit and Integration Test Status",
                 body: "Unit and integration tests were successful!"   
                 }
             }
@@ -51,8 +51,8 @@ pipeline {
             }
             post {
                 success {
-                    mail to: "s223716089@deakin.edu.au"
-                    subject: "Security Scan Status"
+                    mail to: "s223716089@deakin.edu.au",
+                    subject: "Security Scan Status",
                     body: "Security scan was successful!"
                 }
             }
