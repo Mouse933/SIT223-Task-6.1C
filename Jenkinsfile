@@ -27,6 +27,11 @@ pipeline {
                 echo "Preparing integration tests using $INT_TEST_TOOL"
                 echo "Running integration tests"
             }
+            post {
+                mail to: "s223716089@deakin.edu.au"
+                subject: "Unit and Integration Test Status"
+                body: "Unit and integration tests were successful!"
+            }
         }
         stage("Code Analysis") {
             steps {
@@ -41,6 +46,11 @@ pipeline {
                 echo "Installing $SECURITY_TOOL"
                 echo "Running security scan using $SECURITY_TOOL"
                 echo "Security scan complete, vulnerability assessment can be viewed at $LOG_PATH/$SECURITY_TOOL/results"
+            }
+            post {
+                mail to: "s223716089@deakin.edu.au"
+                subject: "Security Scan Status"
+                body: "Security scan was successful!"
             }
         }
         stage("Deploy to Staging") {
