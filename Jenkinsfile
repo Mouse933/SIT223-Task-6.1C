@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GIT_REPO = "https://github.com/Mouse933/SIT223-Task-6.1C.git/"
-        LOG_PATH = "/user/Jenkins/logs/"
+        LOG_PATH = "/user/Jenkins/logs"
         BUILD_TOOL = "Maven"
         UNIT_TEST_TOOL = "JUnit"
         INT_TEST_TOOL = "Citrus"
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo "Installing $SECURITY_TOOL"
                 echo "Running security scan using $SECURITY_TOOL"
-                echo "Security scan complete, vulnerability assessment can be viewed at $LOG_PATH/SECURITY_TOOL/results"
+                echo "Security scan complete, vulnerability assessment can be viewed at $LOG_PATH/$SECURITY_TOOL/results"
             }
         }
         stage("Deploy to Staging") {
