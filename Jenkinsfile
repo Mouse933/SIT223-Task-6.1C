@@ -60,7 +60,9 @@ pipeline {
         stage("Deploy to Production") {
             steps {
                 echo "Collecting information and code from $STAGING_SERVER"
+                sleep 10
                 echo "Pushing to production server $PROD_SERVER"
+                sleep 10
                 echo "Deploying to production server $PROD_SERVER"
             }
         }
